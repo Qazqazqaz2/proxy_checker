@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block title %}{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<body>
+
+<script type="text/javascript">
+      var verifyCallback = function(response) {
+        alert(response);
+      };
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LeBCfIZAAAAAO39_L4Gd7f6uCM0PfP_N3XjHxkW',
+          'theme' : 'dark'
+        });
+      };
+    </script>
+<div class="column is-4 is-offset-4" style="padding-top: 100px">
+    <div class="box">
+        <form class="justify-content-center" action="/" method="POST" enctype=multipart/form-data>
+            <div class="field">
+                <div class="control">
+                    <label for="floatingTextarea">Proxy</label>
+                    <input type="file" class="input" name="proxy" id="proxy" multiple="">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label for="floatingTextarea">IP для проверки</label>
+                    <input type="file" class="input" name="ip" id="ip" multiple="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="octet_count" name='octet_count' name='octet'>
+                            <option value='0' selected>Количество октетов: 0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value='True' id="ipv6" name="ipv6"checked>
+                <label class="form-check-label" for="ipv6">
+                    Проверка на IPV6
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value='True' id="speed" name="speed" checked>
+                <label class="form-check-label" for="speed">
+                    Проверка на скорость
+                </label>
+            </div>
+            <br>
+            <button type="submit" class="button is-block bg-info is-large is-fullwidth">Start</button>
+        </form>
+    </div>
+</div>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        </body>
+</html>
